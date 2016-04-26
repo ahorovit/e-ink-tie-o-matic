@@ -1,3 +1,18 @@
+//#####################################
+//
+// Gumstix + RPI + E-INK 2.7" display
+// E-TIE-O-MATIC, bluetooth listener
+//
+//
+//	compilation:
+//		gcc -o gum_pi gum_pi.c -lbluetooth
+//
+// Credit:
+//  Andrew Pellitieri & Adin Horovitz
+//  EC535 Embedded Systems @ Boston University
+//
+//#####################################
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/socket.h>
@@ -47,7 +62,7 @@ while(1 == 1){
 	system(strcmd);
 	*/
 	char strcmd1 [300] = "/home/pi/Desktop/ec535/PlatformWithOS/driver-common/xbm2bin < ";
-	strcat(strcmd1, "/home/pi/Desktop/ec535/PlatformWithOS/demo/"); //add directory
+	strcat(strcmd1, "imgs/"); //add directory
 	strcat(strcmd1, buf);
 	strcat(strcmd1, ".xbm > /dev/epd/display"); //add extension/rest of command
 
